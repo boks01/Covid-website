@@ -5,7 +5,7 @@
 
 .content1, .content1-h1-error{
     text-align: center;
-    padding: 20px
+    padding: 10px
 }
 
 .content1{
@@ -59,4 +59,12 @@
     .card-body{
         text-align: center;
     }
+}
+
+.button-bocil{
+    margin-bottom: 10px;
+}
+
+.button-error {
+    margin-bottom: 122px;
 }

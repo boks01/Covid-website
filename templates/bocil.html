@@ -39,7 +39,7 @@
     <section class="content1" >
       {% if covid == [] %}
         <h1 class="content1-h1-error">Still empty...</h1>
-        <a class="btn btn-dark" href="{{ url_for('add') }}">Add new data covid</a>
+        <a class="button-error btn btn-dark" href="{{ url_for('add') }}">Add new data covid</a>
       {% else %}
         <div class="row">
           {% for a in covid %}
@@ -52,7 +52,8 @@
                       <h5 class="card-title">{{i['country']}}</h5>
                       <h5 class="card-text">Total cases = {{i['cases']}}</h5>
                       <h5 class="card-text">Today cases = {{i['todayCases']}} ...</h5>
-                      <a href="{{url_for('data', country=i.country)}}" class="btn btn-primary">See all datas!!</a>
+                      <a href="{{url_for('data', country=i.country)}}" class="button-bocil btn btn-primary">See all datas!!</a><br>
+                      <a class="button-bocil btn btn-danger" href="{{url_for('delete', id=a.id)}}">Delete covid data</a>
                     </div>
                   </div>
                 </div>

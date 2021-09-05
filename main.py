@@ -56,11 +56,13 @@ def add():
 def data():
     country = request.args.get('country')
     code = country_code(country)
+    covid = db.session.query(DataCovid).all()
     return render_template(
         "data.html", 
         code=code, 
         country=country, 
-        result=result
+        result=result,
+        covid=covid
         )
 
 @app.route("/why")
@@ -68,6 +70,14 @@ def why():
     return render_template(
         "info.html"
         )
+
+@app.route("/delete")
+def delete():
+    id = request.args.get('id')
+    book_to_delete = DataCovid.query.get(id)
+    db.session.delete(book_to_delete)
+    db.session.commit()
+    return redirect(url_for('home'))
 
 if __name__ == "__main__":
     app.run(debug=True)
