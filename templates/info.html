@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/419ac82388.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <section class="navbar4" id="home">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+              <a class="navbar-brand" href="#"><i class="fas fa-virus-slash"></i> covid data</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{url_for('home')}}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#footer">Footer</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>    
+      </section>
+      <section class="content5">
+        <h1>why do I have to open this website before 7 am?</h1>
+        <h5 class="info-h5">
+            Because at that time the daily case is refreshed and you can see the daily case.
+            if you open this website maybe 11 am or so,
+            in some countries doesn't display daily cases
+            example:
+        </h5>
+        <div class="row">
+          <div class="col-8">
+            <div class="card">
+              <div class="card-body">
+                <img src="https://www.countryflags.io/us/shiny/64.png">
+                      <h5 class="card-title">USA (example)</h5>
+                      <h4 class="card-text">Total cases = 10000 </h4>
+                      <h4 class="card-text">
+                        Today cases = 0 (today cases doesn't display)
+                      </h4>
+                      <h4 class="card-text">Death cases = 100</h4>
+                      <h4 class="card-text">Recovered cases = 100</h4><br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="footer bg-dark">
+        <i class="footer_icon far fa-question-circle"></i>
+        <i class="footer_icon fab fa-instagram"></i>
+        <i class="footer_icon far fa-envelope"></i>
+        <p>@ Copyright 2021 <b>Salman alfarisi</b></p>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  </body>
+</html>

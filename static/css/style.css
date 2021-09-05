@@ -1,0 +1,62 @@
+.warning-info{
+    text-align: center;
+    padding: 110px 20px 20px;
+}
+
+.content1, .content1-h1-error{
+    text-align: center;
+    padding: 20px
+}
+
+.content1{
+    padding-bottom: 100px;
+}
+
+.card-body{
+    text-align: left;
+}
+
+.footer{
+    text-align: center;
+    padding: 1%;
+    color: #fff !important; 
+}
+
+.footer_icon{
+    padding: 5px;
+}
+
+.add-data{
+    margin: 12% 8%;
+}
+
+.my-column{
+    padding-top: 25px;
+}
+.my-column-2{
+    padding: 10%;
+}
+
+.navbar1{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
+.add-data{
+    margin-bottom: 208px;
+}
+
+.content5{
+    padding: 80px;
+    text-align: left;
+}
+.info-h5{
+    padding: 15px 0;
+}
+
+@media (max-width : 1000px){
+    .card-body{
+        text-align: center;
+    }
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/419ac82388.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+      <section class="navbar1" id="home">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+              <a class="navbar-brand" href="#"><i class="fas fa-virus-slash"></i> covid data</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('add') }}">Add</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#footer">Footer</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>    
+      </section>
+    <section class="warning-info" id="home">
+      <div class="info">
+        <h3>
+          I suggest you open this website in 6 am, <a href="{{url_for('why')}}">why?</a>
+        </h3>
+      </div>
+    </section>
+    <section class="content1" >
+      {% if covid == [] %}
+        <h1 class="content1-h1-error">Still empty...</h1>
+        <a class="btn btn-dark" href="{{ url_for('add') }}">Add new data covid</a>
+      {% else %}
+        <div class="row">
+          {% for a in covid %}
+            {% for i in result %}
+              {% if i.country == a.country_name %}
+                <div class="my-column col-lg-3 col-md-6 col-sm-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <img src="https://www.countryflags.io/{{a.country_code}}/shiny/64.png">
+                      <h5 class="card-title">{{i['country']}}</h5>
+                      <h5 class="card-text">Total cases = {{i['cases']}}</h5>
+                      <h5 class="card-text">Today cases = {{i['todayCases']}} ...</h5>
+                      <a href="{{url_for('data', country=i.country)}}" class="btn btn-primary">See all datas!!</a>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </section>
+    <section class="footer bg-dark" id="footer">
+        <i class="footer_icon far fa-question-circle"></i>
+        <i class="footer_icon fab fa-instagram"></i>
+        <i class="footer_icon far fa-envelope"></i>
+        <p>@ Copyright 2021 <b>Salman alfarisi</b></p>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  </body>
+</html>
