@@ -8,7 +8,7 @@ from wtforms.fields.simple import SubmitField
 from wtforms.validators import DataRequired, Email, Length
 import requests
 import datetime as dt
-from test import country_code
+from test import country_code, make_news
 
 API_URL = "https://coronavirus-19-api.herokuapp.com/countries"
 app = Flask(__name__)
@@ -57,12 +57,14 @@ def data():
     country = request.args.get('country')
     code = country_code(country)
     covid = db.session.query(DataCovid).all()
+    news = make_news('id')
     return render_template(
         "data.html", 
         code=code, 
         country=country, 
         result=result,
-        covid=covid
+        covid=covid,
+        news=news
         )
 
 @app.route("/why")

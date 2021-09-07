@@ -25,24 +25,33 @@ def country_code(country):
         code = i['alpha2Code'].lower()
     return code
 
-# def make_news(code):
-#     code = code
-#     # code = 'id'
-#     api = "faf719230ea74835a67d79e57b25835b"
-#     news_api = "https://newsapi.org/v2/top-headlines"
-#     news_params = {
-#     "country": code,
-#     "category": "health",
-#     "apiKey": api,
-#     "language":'id'
-#     }
-#     news_response = requests.get(news_api, params=news_params)
-#     result = news_response.json()['articles']
-#     # data = result
-#     # print(data)
-#     return result
+def make_news(code):
+    code = code
+    # code = 'id'
+    api = "faf719230ea74835a67d79e57b25835b"
+    news_api = "https://newsapi.org/v2/top-headlines"
+    news_params = {
+    "country": code,
+    "category": "health",
+    "apiKey": api,
+    "language":'id'
+    }
+    news_response = requests.get(news_api, params=news_params)
+    result = news_response.json()['articles']
+    news = random.choice(result)
+    # data = result
+    # print(data)
+    return news
 
-# print(make_news('id'))
+# print()
+data = make_news('id')
+print(data['title'])
+# title = news['title']
+# desc = news['description']
+# url = news['url']
+# print(title)
+# print(desc)
+# print(url)
 # title = data['title']
 # url = data['url']
 # description = data['description']

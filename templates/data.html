@@ -15,7 +15,7 @@
     <section class="navbar2" id="home">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-              <a class="navbar-brand" href="#"><i class="fas fa-virus-slash"></i></a>
+              <a class="navbar-brand" href="#"><i class="fas fa-virus-slash"></i> covid data</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -33,22 +33,34 @@
           </nav>    
       </section>
     <section class="see-data">
+      <div class="row">
         {% for i in result %}
           {% if i.country == country %}
-            <div class="my-column-2 col-12">
+            <div class="my-column-4 col-6">
                 <div class="card">
-                <div class="card-body">
+                  <div class="card-body">
                     <img src="https://www.countryflags.io/{{code}}/shiny/64.png">
-                    <h5 class="card-title">{{i.country}}</h5>
-                    <h4 class="card-text">Total cases = {{i.cases}}</h4>
-                    <h4 class="card-text">Today cases = {{i.todayCases}}</h4>
-                    <h4 class="card-text">Death cases = {{i.deaths}}</h4>
-                    <h4 class="card-text">Recovered cases = {{i.recovered}}</h4><br>
+                    <h4 class="card-title">{{i.country}}</h4>
+                    <h6 class="card-text">Total cases = {{i.cases}}</h6>
+                    <h6 class="card-text">Today cases = {{i.todayCases}}</h6>
+                    <h6 class="card-text">Death cases = {{i.deaths}}</h6>
+                    <h6 class="card-text">Recovered cases = {{i.recovered}}</h4><br>
+                  </div>
                 </div>
+              </div>
+            <div class="my-column-4 col-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h3>NEWS</h3>
+                    <h5 class="card-title">{{news.title}}</h5>
+                    <h4 class="card-text">{{news.description}}</h4>
+                    <p class="card-text">Click <a href="{{news.url}}" target="blank">here</a> to see more</p>
+                  </div>
                 </div>
-            </div>
-        {% endif %}
-    {% endfor %}
+              </div>
+            {% endif %}
+        {% endfor %}
+      </div>
     </section>
     <section class="footer bg-dark">
         <i class="footer_icon far fa-question-circle"></i>
